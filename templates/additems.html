@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+    <h1>This is the additems page</h1>
+{% endblock heading %}
+
+{% block contents %}
+    <br>
+    
+<div class='container'>
+        <h3 class='mb-3'>Add Data about your item</h3>
+
+    <form method='POST' action="{{url_for('add_item')}}">
+        {{form.hidden_tag()}}
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name of Item</label>
+            {{form.name(class="form-control",placeholder="enter Name")}}
+        </div>
+        <div class='mb-3'>
+            <label for="Supplier" class="form-label">Supplier</label>
+            {{form.supplier(class="form-control",placeholder="Supplier")}}
+        </div>
+        <div class='mb-3'>
+            <label for="desc" class="form-label">Description</label>
+            {{form.description(class="form-control",placeholder="Description")}}
+        </div>
+        <div class='mb-3'>
+            <label for="price" class="form-label">Price</label>
+            {{form.price(class="form-control",placeholder="Price")}}
+        </div>
+
+        <div class='mb-3'>
+            <label for="url" class="form-label">URL of Image</label>
+            {{form.url(class="form-control",placeholder="URL of image")}}
+        </div>
+
+        {{form.submit(class='btn btn-success')}}
+    </form>
+</div>
+{% endblock contents %}

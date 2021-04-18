@@ -1,0 +1,1 @@
+hello Dunia this is a static text file
